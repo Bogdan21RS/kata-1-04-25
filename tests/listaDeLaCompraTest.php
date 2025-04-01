@@ -47,6 +47,7 @@ final class listaDeLaCompraTest extends TestCase
      */
     public function emptyingTheListReturnsEmptyString(): void
     {
+        $this->listaDeLaCompra->listar("añadir pan");
         assertEquals("", $this->listaDeLaCompra->listar("vaciar"));
     }
 
