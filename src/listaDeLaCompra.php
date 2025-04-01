@@ -9,8 +9,13 @@ class listaDeLaCompra
 
     public function listar(String $products): String
     {
+        if (isEmpty($products)) {
+            return "";
+        }
+
         if (str_contains($products, "añadir")) {
             $explodedProducts = explode(" ", $products);
+
             if(count($explodedProducts) == 2) {
                 return strtolower($explodedProducts[1]) . " x1";
             }
@@ -20,9 +25,7 @@ class listaDeLaCompra
             }
             return "";
         }
-        if (isEmpty($products)) {
-            return "";
-        }
+
         return "";
     }
 }
