@@ -33,6 +33,16 @@ final class listaDeLaCompraTest extends TestCase
     /**
      * @test
      */
+    public function addingAProductWithQuantityReturnsListWithTheQuantityOfThatProduct(): void
+    {
+        $listaDeLaCompra = new listaDeLaCompra();
+        $expected = "pan 2";
+        assertEquals($listaDeLaCompra->listar("añadir pan 2"), $expected);
+    }
+
+    /**
+     * @test
+     */
     public function addingNoProductsReturnsDoesNotModifyList(): void
     {
         $listaDeLaCompra = new listaDeLaCompra();

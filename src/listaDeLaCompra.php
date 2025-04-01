@@ -14,6 +14,10 @@ class listaDeLaCompra
             if(count($explodedProducts) == 2) {
                 return $explodedProducts[1] . " x1";
             }
+
+            if(count($explodedProducts) == 3) {
+                return $explodedProducts[1] . " " . $explodedProducts[2];
+            }
             return "";
         }
         if (isEmpty($products)) {
