@@ -12,6 +12,10 @@ class listaDeLaCompra
             return "";
         }
 
+        if (str_contains($products, "vaciar")) {
+            return "";
+        }
+
         if (str_contains($products, "añadir")) {
             $explodedProducts = explode(" ", $products);
 

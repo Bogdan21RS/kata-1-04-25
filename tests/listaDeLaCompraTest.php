@@ -45,6 +45,14 @@ final class listaDeLaCompraTest extends TestCase
     /**
      * @test
      */
+    public function emptyingTheListReturnsEmptyString(): void
+    {
+        assertEquals("", $this->listaDeLaCompra->listar("vaciar"));
+    }
+
+    /**
+     * @test
+     */
     public function addingNoProductsReturnsDoesNotModifyList(): void
     {
         assertEquals("", $this->listaDeLaCompra->listar("añadir"));
