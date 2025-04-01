@@ -20,4 +20,14 @@ final class listaDeLaCompraTest extends TestCase
         assertEquals($listaDeLaCompra->listar(""), $expected);
     }
 
+    /**
+     * @test
+     */
+    public function addingNoProductsReturnsDoesNotModifyList(): void
+    {
+        $listaDeLaCompra = new listaDeLaCompra();
+        $expected = "";
+        assertEquals($listaDeLaCompra->listar("añadir"), $expected);
+    }
+
 }
