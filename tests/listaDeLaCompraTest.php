@@ -37,7 +37,7 @@ final class listaDeLaCompraTest extends TestCase
     {
         $listaDeLaCompra = new listaDeLaCompra();
         $expected = "pan 2";
-        assertEquals($listaDeLaCompra->listar("añadir pan 2"), $expected);
+        assertEquals($listaDeLaCompra->listar("añadir Pan 2"), $expected);
     }
 
     /**

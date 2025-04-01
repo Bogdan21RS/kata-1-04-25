@@ -12,11 +12,11 @@ class listaDeLaCompra
         if (str_contains($products, "añadir")) {
             $explodedProducts = explode(" ", $products);
             if(count($explodedProducts) == 2) {
-                return $explodedProducts[1] . " x1";
+                return strtolower($explodedProducts[1]) . " x1";
             }
 
             if(count($explodedProducts) == 3) {
-                return $explodedProducts[1] . " " . $explodedProducts[2];
+                return strtolower($explodedProducts[1]) . " " . $explodedProducts[2];
             }
             return "";
         }
