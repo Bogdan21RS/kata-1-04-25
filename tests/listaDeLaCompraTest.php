@@ -39,7 +39,16 @@ final class listaDeLaCompraTest extends TestCase
      */
     public function addingAProductWithQuantityReturnsListWithTheQuantityOfThatProduct(): void
     {
-        assertEquals("pan 2", $this->listaDeLaCompra->listar("añadir Pan 2"));
+        assertEquals("pan x2", $this->listaDeLaCompra->listar("añadir Pan 2"));
+    }
+
+    /**
+     * @test
+     */
+    public function addingAProductThatAlreadyExistsReturnsAListWithTheSumOfQuantities(): void
+    {
+        $this->listaDeLaCompra->listar("añadir Pan 2");
+        assertEquals("pan x4", $this->listaDeLaCompra->listar("añadir Pan 2"));
     }
 
     /**
