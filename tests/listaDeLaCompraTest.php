@@ -10,14 +10,20 @@ use function PHPUnit\Framework\assertEquals;
 
 final class listaDeLaCompraTest extends TestCase
 {
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->listaDeLaCompra = new listaDeLaCompra();
+    }
+
+
     /**
      * @test
      */
     public function givenEmptyProductsReturnsEmptyList(): void
     {
-        $listaDeLaCompra = new listaDeLaCompra();
-        $expected = "";
-        assertEquals($listaDeLaCompra->listar(""), $expected);
+        assertEquals("", $this->listaDeLaCompra->listar(""));
     }
 
     /**
@@ -25,9 +31,7 @@ final class listaDeLaCompraTest extends TestCase
      */
     public function addingAProductWithoutQuantityReturnsListWithOneOfThatProduct(): void
     {
-        $listaDeLaCompra = new listaDeLaCompra();
-        $expected = "pan x1";
-        assertEquals($listaDeLaCompra->listar("añadir pan"), $expected);
+        assertEquals("pan x1", $this->listaDeLaCompra->listar("añadir pan"));
     }
 
     /**
@@ -35,9 +39,7 @@ final class listaDeLaCompraTest extends TestCase
      */
     public function addingAProductWithQuantityReturnsListWithTheQuantityOfThatProduct(): void
     {
-        $listaDeLaCompra = new listaDeLaCompra();
-        $expected = "pan 2";
-        assertEquals($listaDeLaCompra->listar("añadir Pan 2"), $expected);
+        assertEquals("pan 2", $this->listaDeLaCompra->listar("añadir Pan 2"));
     }
 
     /**
@@ -45,9 +47,7 @@ final class listaDeLaCompraTest extends TestCase
      */
     public function addingNoProductsReturnsDoesNotModifyList(): void
     {
-        $listaDeLaCompra = new listaDeLaCompra();
-        $expected = "";
-        assertEquals($listaDeLaCompra->listar("añadir"), $expected);
+        assertEquals("", $this->listaDeLaCompra->listar("añadir"));
     }
 
 }
