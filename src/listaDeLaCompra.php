@@ -7,7 +7,7 @@ use function PHPUnit\Framework\isEmpty;
 class listaDeLaCompra
 {
 
-    public function listar()
+    public function listar(String $productos): String
     {
         return "";
     }
